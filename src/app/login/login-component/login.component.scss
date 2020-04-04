@@ -1,0 +1,68 @@
+.login-page, .register-page {
+    background-image: url("src/assets/assets/newlogin.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.login-logo, .register-logo {
+    font-size: 35px;
+     text-align: center; 
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.login-text {
+    text-align: center;
+    margin-top: 10px;
+    color: #fff;
+}
+
+    .login-text h1, .footer-title {
+        color: white;
+        font-size: 14.5em;
+        // font-weight: bold;
+    }
+
+    .login-text h2 {
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        border-top: 2px solid #03809b;
+        border-bottom: 2px solid#03809b;
+        width: 230px;
+        margin: 0 auto;
+        padding: 5px;
+    }
+    .modal-header {
+        background-color: #003768;
+        border-bottom-color: #f4f4f4;
+    }
+    .modal-title {
+        color: #fff;
+        margin: 0;
+        line-height: 1.42857143;
+    }
+    .btn-info {
+        background-color: #003768;
+        border-color: #003768;
+    }
+    .list{
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+    }
+    .dot {
+        height: 8px;
+        width: 8px;
+        background-color: #3c8dbc;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      input[type=checkbox], input[type=radio] {
+        margin: 9px 0 0;
+        // margin-top: 1px\9;
+        line-height: normal;
+    }
+   
+    

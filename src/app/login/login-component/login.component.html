@@ -1,0 +1,58 @@
+<div class="container-fluid login-page" style="padding: 0px">
+    <div class="login-box">
+       
+        <div class="login-text">
+            <h2 >Web Portal</h2>
+        </div>
+        <div class="login-box-body" style="margin-top:25px;">
+            <p class="login-box-msg">Sign in to start your session</p>
+
+            <form [formGroup]="login" (ngSubmit)="submitForm(login.value)" novalidate>
+                <div class="form-group has-feedback">
+                    <input id="email" type="text" class="form-control" (focus)="hideError()" formControlName="email" placeholder="Email">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    <div *ngIf="login.controls['email'].hasError('required') && login.controls['email'].touched" class="text-danger">
+                        Required
+                    </div>
+                    <div *ngIf="login.controls['email'].hasError('pattern') && login.controls['email'].dirty && !login.controls['email'].hasError('required') "
+                        class="text-danger">
+                        Email is not valid
+                    </div>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" id="txtpassword" class="form-control" (keyup)="onKeyUp($event)" (blur)="onBlur()"
+                        data-toggle="tooltip" data-trigger="manual" (focus)="hideError()" placeholder="Password"
+                        formControlName="password">
+                         <span (click)="changePasswordView()" style="pointer-events: all" class="cursor-pointer form-control-feedback" [ngClass]="changeClass"></span>
+                    <div *ngIf="login.controls['password'].hasError('required') && login.controls['password'].touched"
+                        class="text-danger">
+                        Required
+                    </div>
+                </div>
+                <div class="row">
+                    <div *ngIf="error" style="padding-left: 16px;padding-bottom: 5px;" class="text-danger text-left">
+                        
+                            {{message}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6" >
+                                <label>
+                                  <input [(ngModel)]="rememberMeCheck" type="checkbox" [ngModelOptions]="{standalone: true}"> Remember Me
+                                </label>
+                    </div>
+                    <div class="col-xs-6">
+
+                        <button type="submit" *ngIf="btnSub" [disabled]="!login.valid" class="btn btn-primary btn-block btn-flat">Sign
+                            In  </button>
+                            <img *ngIf="loading==true" src="assets/assets/loader.gif"  width="100px"/>
+                    </div>
+                    </div>
+                    
+                    <!-- /.col -->
+                </form>
+                </div>
+
+           
+        </div>
+    </div>
